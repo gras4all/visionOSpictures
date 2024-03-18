@@ -3,4 +3,82 @@
    uuid = "0B4C16D9-D5AE-4C3A-802A-C322D06DBD06"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F7C7FFBC-577F-4410-B751-D610DCA56B62"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "arpictures/Windows/Main/Scenes/Main/Views/Library/LibraryView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "fetchPhotos()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F7C7FFBC-577F-4410-B751-D610DCA56B62 - cc575fc15765d921"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "arpictures.LibraryView.fetchPhotos() -&gt; ()"
+                  moduleName = "arpictures"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrei/Documents/xcodeprojects/CheckIn/visionOS/arpictures/arpictures/Windows/Main/Scenes/Main/Views/Library/LibraryView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "98"
+                  endingLineNumber = "98">
+               </Location>
+               <Location
+                  uuid = "F7C7FFBC-577F-4410-B751-D610DCA56B62 - c48b0a80ddc32256"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Swift.MainActor () -&gt; () in arpictures.LibraryView.fetchPhotos() -&gt; ()"
+                  moduleName = "arpictures"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrei/Documents/xcodeprojects/CheckIn/visionOS/arpictures/arpictures/Windows/Main/Scenes/Main/Views/Library/LibraryView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90">
+               </Location>
+               <Location
+                  uuid = "F7C7FFBC-577F-4410-B751-D610DCA56B62 - c48b0a80ddc33d6e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Swift.MainActor () -&gt; () in arpictures.LibraryView.fetchPhotos() -&gt; ()"
+                  moduleName = "arpictures"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrei/Documents/xcodeprojects/CheckIn/visionOS/arpictures/arpictures/Windows/Main/Scenes/Main/Views/Library/LibraryView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "98"
+                  endingLineNumber = "98">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8B381224-437B-4176-B130-5C851D50729A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "arpictures/Windows/Main/Scenes/Main/Views/Library/LibraryView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "handleImage(image:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

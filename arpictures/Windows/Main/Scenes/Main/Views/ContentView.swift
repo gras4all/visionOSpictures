@@ -18,9 +18,25 @@ struct ContentView: View {
     @Environment(\.dismissImmersiveSpace) var dismissImmersiveSpace
 
     var body: some View {
-        HStack {
-            LibraryView()
-            SettingsView()
+        HStack(spacing: 16) {
+            VStack {
+                Text("Gallery")
+                    .foregroundColor(.white)
+                    .font(.title)
+                LibraryView()
+            }
+            .padding(.top, 30)
+            .background(.containerBg)
+            .cornerRadius(30)
+            VStack {
+                Text("Settings")
+                    .foregroundColor(.white)
+                    .font(.title)
+                SettingsView()
+            }
+            .padding(.top, 30)
+            .background(.containerBg)
+            .cornerRadius(30)
         }
         .padding()
         .task {

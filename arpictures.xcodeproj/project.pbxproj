@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7535AA092BA8C2E000459808 /* PhotoCellRawImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7535AA082BA8C2E000459808 /* PhotoCellRawImage.swift */; };
 		75D024112BA83E0C006A8CAD /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 75D024102BA83E0C006A8CAD /* RealityKitContent */; };
 		75D024132BA83E0C006A8CAD /* arpicturesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D024122BA83E0C006A8CAD /* arpicturesApp.swift */; };
 		75D024152BA83E0C006A8CAD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D024142BA83E0C006A8CAD /* ContentView.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7535AA082BA8C2E000459808 /* PhotoCellRawImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCellRawImage.swift; sourceTree = "<group>"; };
 		75D0240B2BA83E0C006A8CAD /* arpictures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = arpictures.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75D0240F2BA83E0C006A8CAD /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
 		75D024122BA83E0C006A8CAD /* arpicturesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = arpicturesApp.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			children = (
 				75D0242F2BA846CA006A8CAD /* LibraryView.swift */,
 				75D024312BA84771006A8CAD /* PhotoCell.swift */,
+				7535AA082BA8C2E000459808 /* PhotoCellRawImage.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				75D024412BA851F0006A8CAD /* View+Shine.swift in Sources */,
 				75D0243D2BA851AB006A8CAD /* FilterCardModel.swift in Sources */,
 				75D024322BA84771006A8CAD /* PhotoCell.swift in Sources */,
+				7535AA092BA8C2E000459808 /* PhotoCellRawImage.swift in Sources */,
 				75D0243B2BA85186006A8CAD /* MaterialCardModel.swift in Sources */,
 				75D024152BA83E0C006A8CAD /* ContentView.swift in Sources */,
 				75D024382BA84D3F006A8CAD /* SettingsView.swift in Sources */,

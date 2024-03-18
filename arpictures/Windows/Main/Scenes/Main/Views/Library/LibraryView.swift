@@ -15,47 +15,50 @@ struct LibraryView: View {
     static var firstImage: PHAsset?
     
     @State private var assets: [PHAsset] = []
+    @State private var placeholderImages: [UIImage] = []
     @State private var showingSheet = false
     @State private var selectedPhotos: [UIImage] = []
     @State private var isImagePickerPresented: Bool = false
     
     init() {
-        LibraryView.side = 100
+        LibraryView.side = 180
     }
 
     var body: some View {
-        NavigationView {
-            ZStack {
-                Color.black.edgesIgnoringSafeArea([.all])
-                ScrollView {
-                    VStack {
-                        LazyVGrid(columns: Array(repeating: GridItem(), count: 3), spacing: 0) {
-                            
+        ZStack {
+            ScrollView {
+                VStack {
+                    LazyVGrid(columns: Array(repeating: GridItem(), count: 3), spacing: 16) {
+                        if !assets.isEmpty {
                             ForEach(assets, id: \.localIdentifier) { asset in
                                 PhotoCell(asset: asset)
-                                    
                                     .onTapGesture {
                                         let requestOptions = PHImageRequestOptions()
-                                                    requestOptions.isSynchronous = true
+                                        requestOptions.isSynchronous = true
                                         PHImageManager.default().requestImage(for: asset, targetSize: CGSize(width: asset.pixelWidth, height: asset.pixelHeight), contentMode: .aspectFill, options: requestOptions) { (image, _) in
-                                            //arVM.initAR(with: image)
-                                            //showingSheet.toggle()
+                                            guard let image = image else { return }
+                                            handleImage(image: image)
                                         }
-
+                                        
+                                    }
+                            }
+                        } else {
+                            ForEach(placeholderImages, id: \.self) { image in
+                                PhotoCellRawImage(rawImage: image)
+                                    .onTapGesture {
+                                        handleImage(image: image)
                                     }
                             }
                         }
-                        .padding()
                     }
+                    .padding()
                 }
             }
-            .navigationTitle("Gallery")
-            .onAppear {
-                requestPhotos()
-            }
+        }
+        .onAppear {
+            requestPhotos()
         }
     }
-    
     
     private func requestPhotos() {
         PHPhotoLibrary.requestAuthorization(for: .readWrite) { (status) in
@@ -67,6 +70,7 @@ struct LibraryView: View {
                 case .restricted:
                    break
                 case .denied:
+                   addPlaceholderPhotos()
                    break
                 case .notDetermined:
                     break
@@ -92,8 +96,30 @@ struct LibraryView: View {
         }
         DispatchQueue.main.async {
             self.assets = fetchedAssets
+            if fetchedAssets.isEmpty {
+                addPlaceholderPhotos()
+            }
         }
     }
+    
+    private func addPlaceholderPhotos() {
+        self.placeholderImages = [
+            UIImage(named: "ic_ph_1")!,
+            UIImage(named: "ic_ph_2")!,
+            UIImage(named: "ic_ph_3")!,
+            UIImage(named: "ic_ph_4")!,
+            UIImage(named: "ic_ph_5")!,
+            UIImage(named: "ic_ph_6")!,
+            UIImage(named: "ic_ph_7")!,
+            UIImage(named: "ic_ph_8")!,
+            UIImage(named: "ic_ph_9")!
+        ]
+    }
+    
+    private func handleImage(image: UIImage) {
+        print("test")
+    }
+    
 }
 
 struct PhotoPicker: UIViewControllerRepresentable {

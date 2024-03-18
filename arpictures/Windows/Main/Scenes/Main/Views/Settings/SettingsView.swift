@@ -31,143 +31,138 @@ struct SettingsView: View {
     let maxValue: Double = 10
     
         var body: some View {
-            NavigationView {
-                ZStack {
-                    Color.black.edgesIgnoringSafeArea([.all])
-                    ScrollView {
+            ZStack {
+                ScrollView {
+                    VStack {
+                        Spacer()
+                            .frame(height: 20)
+                        
                         VStack {
-                            Spacer()
-                                .frame(height: 20)
-                            
-                            VStack {
-                                Text("Select material of picture:")
-                                    .font(.headline)
-                                    .padding(.leading, 40)
-                                    .foregroundColor(.white)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                ScrollView(.horizontal, showsIndicators: false) {
+                            Text("Select material of picture:")
+                                .font(.headline)
+                                .padding(.leading, 40)
+                                .foregroundColor(.white)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack(spacing: 20) {
+                                    Spacer()
+                                        .frame(width: 1)
+                                    ForEach(materials.indices) { index in
+                                        MaterialCardView(card: $materials[index])
+                                            .onTapGesture {
+                                                selectMaterial(index)
+                                            }
+                                    }
+                                }
+                            }
+                        }
+                        .padding(.top, 10)
+                        .padding(.bottom, 15)
+                        //.background(Color("LightBlack"))
+                        .cornerRadius(6)
+                        
+                        Spacer()
+                            .frame(height: 20)
+                        
+                        VStack {
+                            Text("Select filter:")
+                                .font(.headline)
+                                .padding(.leading, 40)
+                                .foregroundColor(.white)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                            ScrollView(.horizontal, showsIndicators: false) {
                                     HStack(spacing: 20) {
                                         Spacer()
                                             .frame(width: 1)
-                                        ForEach(materials.indices) { index in
-                                            MaterialCardView(card: $materials[index])
-                                                .onTapGesture {
-                                                    selectMaterial(index)
-                                                }
-                                        }
-                                    }
-                                }
-                            }
-                            .padding(.top, 10)
-                            .padding(.bottom, 15)
-                            .background(Color("LightBlack"))
-                            .cornerRadius(6)
-                            
-                            Spacer()
-                                .frame(height: 20)
-                            
-                            VStack {
-                                Text("Select filter:")
-                                    .font(.headline)
-                                    .padding(.leading, 40)
-                                    .foregroundColor(.white)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                ScrollView(.horizontal, showsIndicators: false) {
-                                        HStack(spacing: 20) {
-                                            Spacer()
-                                                .frame(width: 1)
-                                            Image(filters[0].src)
-                                                .resizable()
-                                                .frame(width: 75, height: 100)
-                                                .cornerRadius(6)
-                                                .overlay(
-                                                    RoundedRectangle(cornerRadius: 6)
-                                                        .stroke(.accent, lineWidth: filter == 0 ? 3 : 0)
-                                                )
-                                                .padding(.top, 3)
-                                                .padding(.bottom, 3)
-                                                .onTapGesture {
-                                                    selectFilter(0)
-                                                }
-                                            
-                                            
-                                            Image(filters[1].src)
-                                                .resizable()
-                                                .frame(width: 75, height: 100)
-                                                .cornerRadius(6)
-                                                .overlay(
-                                                    RoundedRectangle(cornerRadius: 6)
-                                                        .stroke(.accent, lineWidth: filter == 1 ? 3 : 0)
-                                                )
-                                                    .padding(.top, 3)
-                                                    .padding(.bottom, 3)
-                                                    .onTapGesture {
-                                                        selectFilter(1)
-                                                    }
-                                            
-                                            
-                                            
-                                            Image(filters[2].src)
-                                                .resizable()
+                                        Image(filters[0].src)
+                                            .resizable()
                                             .frame(width: 75, height: 100)
                                             .cornerRadius(6)
                                             .overlay(
                                                 RoundedRectangle(cornerRadius: 6)
-                                                    .stroke(.accent, lineWidth: filter == 2 ? 3 : 0)
+                                                    .stroke(.accent, lineWidth: filter == 0 ? 3 : 0)
                                             )
-                                                .padding(.top, 3)
-                                                .padding(.bottom, 3)
-                                                .onTapGesture {
-                                                    selectFilter(2)
-                                                }
-                                            
-                                            Image(filters[3].src)
-                                                .resizable()
-                                            .frame(width: 75, height: 100)
-                                            .cornerRadius(6)
-                                            .overlay(
-                                                RoundedRectangle(cornerRadius: 6)
-                                                    .stroke(.accent, lineWidth: filter == 3 ? 3 : 0)
-                                            )
-                                                .padding(.top, 3)
-                                                .padding(.bottom, 3)
-                                                .onTapGesture {
-                                                    selectFilter(3)
-                                                }
-                                            
-                                            Image(filters[4].src)
-                                                .resizable()
-                                            .frame(width: 75, height: 100)
-                                            .cornerRadius(6)
-                                            .overlay(
-                                                RoundedRectangle(cornerRadius: 6)
-                                                    .stroke(.accent, lineWidth: filter == 4 ? 3 : 0)
-                                            )
-                                                .padding(.top, 3)
-                                                .padding(.bottom, 3)
-                                                .onTapGesture {
-                                                    selectFilter(4)
-                                                }
-                                            Spacer()
-                                                .frame(width: 1)
-                                            
+                                            .padding(.top, 3)
+                                            .padding(.bottom, 3)
+                                            .onTapGesture {
+                                                selectFilter(0)
+                                            }
                                         
-                                    }
+                                        
+                                        Image(filters[1].src)
+                                            .resizable()
+                                            .frame(width: 75, height: 100)
+                                            .cornerRadius(6)
+                                            .overlay(
+                                                RoundedRectangle(cornerRadius: 6)
+                                                    .stroke(.accent, lineWidth: filter == 1 ? 3 : 0)
+                                            )
+                                                .padding(.top, 3)
+                                                .padding(.bottom, 3)
+                                                .onTapGesture {
+                                                    selectFilter(1)
+                                                }
+                                        
+                                        
+                                        
+                                        Image(filters[2].src)
+                                            .resizable()
+                                        .frame(width: 75, height: 100)
+                                        .cornerRadius(6)
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 6)
+                                                .stroke(.accent, lineWidth: filter == 2 ? 3 : 0)
+                                        )
+                                            .padding(.top, 3)
+                                            .padding(.bottom, 3)
+                                            .onTapGesture {
+                                                selectFilter(2)
+                                            }
+                                        
+                                        Image(filters[3].src)
+                                            .resizable()
+                                        .frame(width: 75, height: 100)
+                                        .cornerRadius(6)
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 6)
+                                                .stroke(.accent, lineWidth: filter == 3 ? 3 : 0)
+                                        )
+                                            .padding(.top, 3)
+                                            .padding(.bottom, 3)
+                                            .onTapGesture {
+                                                selectFilter(3)
+                                            }
+                                        
+                                        Image(filters[4].src)
+                                            .resizable()
+                                        .frame(width: 75, height: 100)
+                                        .cornerRadius(6)
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 6)
+                                                .stroke(.accent, lineWidth: filter == 4 ? 3 : 0)
+                                        )
+                                            .padding(.top, 3)
+                                            .padding(.bottom, 3)
+                                            .onTapGesture {
+                                                selectFilter(4)
+                                            }
+                                        Spacer()
+                                            .frame(width: 1)
+                                        
                                 }
                             }
-                            .padding(.top, 7)
-                            .padding(.bottom, 12)
-                            .background(Color("LightBlack"))
-                            .cornerRadius(6)
- 
-                            Spacer()
-                                .frame(height: 60)
                         }
-                        .padding(.top, 20)
-                        .padding(.bottom, 20)
+                        .padding(.top, 7)
+                        .padding(.bottom, 12)
+                       // .background(Color("LightBlack"))
+                        .cornerRadius(6)
+
+                        Spacer()
+                            .frame(height: 60)
                     }
+                    .padding(.top, 20)
+                    .padding(.bottom, 20)
                 }
-                .navigationBarTitle("Settings")
             }
             .onAppear() {
                 materials.indices.forEach { i in
