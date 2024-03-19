@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75110BDE2BA99A0B00E52B95 /* ImmersiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75110BDD2BA99A0B00E52B95 /* ImmersiveViewModel.swift */; };
+		75110BE02BA99AE200E52B95 /* Notifications+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75110BDF2BA99AE200E52B95 /* Notifications+Extensions.swift */; };
 		7535AA092BA8C2E000459808 /* PhotoCellRawImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7535AA082BA8C2E000459808 /* PhotoCellRawImage.swift */; };
 		75D024112BA83E0C006A8CAD /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 75D024102BA83E0C006A8CAD /* RealityKitContent */; };
 		75D024132BA83E0C006A8CAD /* arpicturesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D024122BA83E0C006A8CAD /* arpicturesApp.swift */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		75110BDD2BA99A0B00E52B95 /* ImmersiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmersiveViewModel.swift; sourceTree = "<group>"; };
+		75110BDF2BA99AE200E52B95 /* Notifications+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notifications+Extensions.swift"; sourceTree = "<group>"; };
 		7535AA082BA8C2E000459808 /* PhotoCellRawImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCellRawImage.swift; sourceTree = "<group>"; };
 		75D0240B2BA83E0C006A8CAD /* arpictures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = arpictures.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75D0240F2BA83E0C006A8CAD /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
@@ -58,6 +62,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		75110BDA2BA999E600E52B95 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				75D024162BA83E0C006A8CAD /* ImmersiveView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		75110BDB2BA999EC00E52B95 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				75110BDD2BA99A0B00E52B95 /* ImmersiveViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		75D024022BA83E0C006A8CAD = {
 			isa = PBXGroup;
 			children = (
@@ -141,7 +161,8 @@
 		75D024292BA84361006A8CAD /* Immersive */ = {
 			isa = PBXGroup;
 			children = (
-				75D024162BA83E0C006A8CAD /* ImmersiveView.swift */,
+				75110BDB2BA999EC00E52B95 /* ViewModels */,
+				75110BDA2BA999E600E52B95 /* Views */,
 			);
 			path = Immersive;
 			sourceTree = "<group>";
@@ -206,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				75D024402BA851F0006A8CAD /* View+Shine.swift */,
+				75110BDF2BA99AE200E52B95 /* Notifications+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -289,11 +311,13 @@
 				75D024412BA851F0006A8CAD /* View+Shine.swift in Sources */,
 				75D0243D2BA851AB006A8CAD /* FilterCardModel.swift in Sources */,
 				75D024322BA84771006A8CAD /* PhotoCell.swift in Sources */,
+				75110BDE2BA99A0B00E52B95 /* ImmersiveViewModel.swift in Sources */,
 				7535AA092BA8C2E000459808 /* PhotoCellRawImage.swift in Sources */,
 				75D0243B2BA85186006A8CAD /* MaterialCardModel.swift in Sources */,
 				75D024152BA83E0C006A8CAD /* ContentView.swift in Sources */,
 				75D024382BA84D3F006A8CAD /* SettingsView.swift in Sources */,
 				75D024132BA83E0C006A8CAD /* arpicturesApp.swift in Sources */,
+				75110BE02BA99AE200E52B95 /* Notifications+Extensions.swift in Sources */,
 				75D024172BA83E0C006A8CAD /* ImmersiveView.swift in Sources */,
 				75D024432BA8523F006A8CAD /* MaterialCardView.swift in Sources */,
 			);
@@ -432,6 +456,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = PicturesAR;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,6 +482,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = PicturesAR;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

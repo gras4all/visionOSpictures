@@ -117,7 +117,8 @@ struct LibraryView: View {
     }
     
     private func handleImage(image: UIImage) {
-        print("test")
+        ImmersiveView.selectedImage = image
+        NotificationCenter.default.post(name: .isPhotoSelected, object: nil)
     }
     
 }
