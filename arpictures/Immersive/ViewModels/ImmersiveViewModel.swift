@@ -16,6 +16,7 @@ import SwiftUI
     @AppStorage("material") private var material: Int = 0
     @AppStorage("filter") private var filter: Int = 0
     var content: RealityViewContent?
+    var lastAnchor: AnchorEntity?
     
     init() {
         NotificationCenter.default.addObserver(forName: .isPhotoSelected, object: nil, queue: .main) { [weak self] _ in
@@ -28,15 +29,11 @@ import SwiftUI
     
     func makeFrame() -> Entity {
         let frame = try! Entity.load(named: "arframe.usdz")
-        if isHorisontalPhoto() {
-            let radians = -90 * Float.pi / 180.0
-            frame.transform.rotation = simd_quatf(angle: radians, axis: SIMD3(x: 0, y: 1, z: 0))
-        }
         return frame
     }
     
     func makePicture(_ image: UIImage?) -> Entity? {
-        if let photo = makePhoto(image, isHorizontal: isHorisontalPhoto()) {
+        if let photo = makePhoto(image, isHorizontal: false) {
             return photo
         }
         return nil
@@ -47,11 +44,11 @@ import SwiftUI
         let filter = ImageFilter(rawValue: filter)
         let filtered = applyFilter(image: photo, filter: filter!)
         
-        var width = 0.36
-        var depth = 0.476
+        var width = 0.529
+        var depth = 0.7
         if isHorizontal {
-            depth = 0.36
-            width = 0.476
+            depth = 0.529
+            width = 0.7
         }
         let modelEntity = ModelEntity(
             mesh: MeshResource.generateBox(
@@ -62,6 +59,8 @@ import SwiftUI
         )
         let texture = createTexture(drawing: filtered?.cgImage)
         modelEntity.model?.materials = [texture]
+        let radians = 90 * Float.pi / 180.0
+        //modelEntity.transform.rotation = simd_quatf(angle: radians, axis: SIMD3(x: 0, y: 1, z: 0))
         return modelEntity
     }
     

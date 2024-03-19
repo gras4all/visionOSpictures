@@ -18,7 +18,7 @@ struct PhotoCell: View {
             .aspectRatio(contentMode: .fill)
             .frame(width: LibraryView.side, height: LibraryView.side) // Adjust the size as needed
             .clipShape(Rectangle()) // or Circle() for a circular shape
-            .overlay(Rectangle().stroke(Color.lightBlack, lineWidth: 1))
+            .overlay(Rectangle().stroke(Color.accentColor, lineWidth: 1))
             .shadow(radius: 5)
     }
 
