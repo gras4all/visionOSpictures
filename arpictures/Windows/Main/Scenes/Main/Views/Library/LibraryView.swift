@@ -112,7 +112,8 @@ struct LibraryView: View {
             UIImage(named: "ic_ph_6")!,
             UIImage(named: "ic_ph_7")!,
             UIImage(named: "ic_ph_8")!,
-            UIImage(named: "ic_ph_9")!
+            UIImage(named: "ic_ph_9")!,
+            UIImage(named: "ic_ph_10")!
         ]
     }
     

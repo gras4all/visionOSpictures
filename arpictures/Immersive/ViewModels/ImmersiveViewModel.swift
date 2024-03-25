@@ -33,7 +33,7 @@ import SwiftUI
     }
     
     func makePicture(_ image: UIImage?) -> Entity? {
-        if let photo = makePhoto(image, isHorizontal: false) {
+        if let photo = makePhoto(image, isHorizontal: isHorisontalPhoto()) {
             return photo
         }
         return nil
@@ -44,12 +44,14 @@ import SwiftUI
         let filter = ImageFilter(rawValue: filter)
         let filtered = applyFilter(image: photo, filter: filter!)
         
-        var width = 0.529
+        var aspectRatio = photo.size.width / photo.size.height
         var depth = 0.7
+        var width = depth * aspectRatio
         if isHorizontal {
-            depth = 0.529
+            aspectRatio = photo.size.height / photo.size.width
             width = 0.7
-        }
+            depth = width * aspectRatio
+        } 
         let modelEntity = ModelEntity(
             mesh: MeshResource.generateBox(
                 width: Float(width),
